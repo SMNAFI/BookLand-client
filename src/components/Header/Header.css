@@ -1,0 +1,21 @@
+.header-container{
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    align-items: center;
+}
+
+.nav{
+    justify-self: end;
+}
+
+.nav ul{
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.anchor {
+    text-decoration: none;
+    color: lightgray;
+    margin-left: 20px;
+}
