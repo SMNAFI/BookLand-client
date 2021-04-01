@@ -6,10 +6,14 @@ import './Order.css'
 const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([]);
+    const [haveOrders, setHaveOrders] = useState(true);
     useEffect(() => {
         axios.get('https://fast-escarpment-67839.herokuapp.com/getOrder?email=' + loggedInUser.email)
             .then(function (response) {
                 setOrders(response.data);
+                if(!response.data.length) {
+                    setHaveOrders(false);
+                }
             })
             .catch(function (error) {
                 console.log(error);
@@ -22,7 +26,7 @@ const Orders = () => {
         <div>
             <h1>Order History</h1>
             {
-                orders.length === 0 &&
+                !haveOrders &&
                 <div style={{ textAlign: 'center' }}>
                     <h1>You haven't ordered anything yet.</h1>
                 </div>

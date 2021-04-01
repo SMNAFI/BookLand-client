@@ -12,7 +12,6 @@ const Checkout = () => {
     useEffect(() => {
         axios.get('https://fast-escarpment-67839.herokuapp.com/getBook?id=' + id)
             .then(function (response) {
-                console.log(response.data);
                 setBookInfo(response.data);
             })
             .catch(function (error) {
@@ -24,10 +23,11 @@ const Checkout = () => {
 
     const handleCheckOut = () => {
         const orderDetail = { ...loggedInUser, ...bookInfo, orderTime: new Date() };
-        console.log(orderDetail);
         axios.post('https://fast-escarpment-67839.herokuapp.com/addOrder', orderDetail)
             .then(function (response) {
-                console.log(response);
+                if(response.data) {
+                    alert('Book added successfully.')
+                }
             })
             .catch(function (error) {
                 console.log(error);

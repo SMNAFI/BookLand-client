@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Checkout from './components/Checkout/Checkout';
 import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -28,15 +29,15 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/orders">
+          <PrivateRoute path="/orders">
             <Orders />
-          </Route>
-          <Route path="/checkout/:id">
+          </PrivateRoute>
+          <PrivateRoute path="/checkout/:id">
             <Checkout />
-          </Route>
-          <Route path="/admin">
+          </PrivateRoute>
+          <PrivateRoute path="/admin">
             <Admin />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>
