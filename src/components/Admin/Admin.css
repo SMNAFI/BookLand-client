@@ -1,0 +1,51 @@
+.admin-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.sidebar{
+    background-color: #222629;
+    min-height: 100vh;
+}
+
+.sidebar p{
+    padding: 15px 50px;
+}
+
+.sidebar p:hover {
+    background-color: #282c34;
+}
+
+.form-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+
+
+.manage-container{
+    background-color: #222629;
+    padding: 35px;
+}
+.manage-row{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    align-items: center;
+}
+.delete-icon{
+    color: tomato;
+    border: none;
+    background-color: #222629;
+}
+.delete-icon:hover{
+    cursor: pointer;
+}
+.edit-icon{
+    color: greenyellow;
+    border: none;
+    background-color: #222629;
+}
+.edit-icon:hover{
+    cursor: pointer;
+}

@@ -10,26 +10,38 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Checkout from './components/Checkout/Checkout';
+import { createContext, useState } from 'react';
+import Manage from './components/Manage/Manage';
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({})
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/orders">
-          <Orders />
-        </Route>
-        <Route path="/admin">
-          <Admin />
-        </Route>
-      </Switch>
-    </Router>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <h3>{loggedInUser.userName}</h3>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/orders">
+            <Orders />
+          </Route>
+          <Route path="/checkout/:id">
+            <Checkout />
+          </Route>
+          <Route path="/admin">
+            <Admin />
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

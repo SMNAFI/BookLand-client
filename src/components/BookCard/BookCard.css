@@ -1,0 +1,27 @@
+.card-container{
+    background-color: #222629;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.card-container img{
+    width: 100%;
+}
+
+.row{
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    align-items: center;
+}
+
+.btn{
+    justify-self: end;
+}
+
+.buy-btn{
+    background-color: tomato;
+    padding: 10px 25px;
+    border: none;
+    color: lightgray;
+    border-radius: 5px;
+}
