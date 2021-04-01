@@ -1,0 +1,20 @@
+.checkout-container{
+    background-color: #222629;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.checkout-row{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 1px solid lightgray;
+}
+
+.button-all{
+    background-color: #86C232;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 4px;
+}

@@ -31,8 +31,9 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h1>this is login</h1>
-            <button className='loginBtn' onClick={googleSignIn}>Continue with Google</button>
+            <div>
+                <button className='loginBtn' onClick={googleSignIn}>Continue with Google</button>
+            </div>
         </div>
     );
 };

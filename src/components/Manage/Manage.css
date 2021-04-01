@@ -1,0 +1,25 @@
+
+.manage-row{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    align-items: center;
+}
+.manage-header{
+    border-bottom: 2px solid lightgray;
+}
+.delete-icon{
+    color: tomato;
+    border: none;
+    background: none;
+}
+.delete-icon:hover{
+    cursor: pointer;
+}
+.edit-icon{
+    color: greenyellow;
+    border: none;
+    background: none;
+}
+.edit-icon:hover{
+    cursor: pointer;
+}

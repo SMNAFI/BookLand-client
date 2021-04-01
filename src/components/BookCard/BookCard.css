@@ -17,11 +17,3 @@
 .btn{
     justify-self: end;
 }
-
-.buy-btn{
-    background-color: tomato;
-    padding: 10px 25px;
-    border: none;
-    color: lightgray;
-    border-radius: 5px;
-}

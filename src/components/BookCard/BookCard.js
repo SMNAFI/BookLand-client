@@ -16,7 +16,7 @@ const BookCard = props => {
             <div className="row">
                 <h2>{price}</h2>
                 <div className="btn">
-                    <button className="buy-btn" onClick={() => handleBuyNow(_id)}>Buy Now</button>
+                    <button className="button-all" onClick={() => handleBuyNow(_id)}>Buy Now</button>
                 </div>
             </div>
         </div>

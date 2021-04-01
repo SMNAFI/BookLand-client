@@ -1,0 +1,15 @@
+
+.order-container{
+    background-color: #222629;
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.order-row{
+    display: grid;
+    grid-template-columns: 2fr repeat( 4, 1fr );
+}
+
+.order-header{
+    border-bottom: 1px solid lightgray;
+}

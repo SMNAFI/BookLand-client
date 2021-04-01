@@ -12,7 +12,6 @@ import {
 } from "react-router-dom";
 import Checkout from './components/Checkout/Checkout';
 import { createContext, useState } from 'react';
-import Manage from './components/Manage/Manage';
 
 export const UserContext = createContext();
 
@@ -21,7 +20,6 @@ function App() {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        <h3>{loggedInUser.userName}</h3>
         <Header />
         <Switch>
           <Route exact path="/">
