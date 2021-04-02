@@ -1,8 +1,9 @@
 
 .order-container{
     background-color: #222629;
-    padding: 30px;
+    padding: 5%;
     border-radius: 6px;
+    margin-top: 50px;
 }
 
 .order-row{

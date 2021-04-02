@@ -19,3 +19,16 @@
     color: lightgray;
     margin-left: 20px;
 }
+
+@media (max-width: 688px) {
+    .header-container {
+        display: block;
+    }
+    .anchor {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    .nav{
+        margin-bottom: 50px;
+    }
+}

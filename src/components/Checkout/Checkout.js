@@ -8,7 +8,7 @@ import './Checkout.css';
 const Checkout = () => {
     const { id } = useParams();
     const [bookInfo, setBookInfo] = useState([]);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
     useEffect(() => {
         axios.get('https://fast-escarpment-67839.herokuapp.com/getBook?id=' + id)
             .then(function (response) {
@@ -19,14 +19,14 @@ const Checkout = () => {
             })
             .then(function () {
             });
-    }, [])
+    }, [id])
 
     const handleCheckOut = () => {
         const orderDetail = { ...loggedInUser, ...bookInfo, orderTime: new Date() };
         axios.post('https://fast-escarpment-67839.herokuapp.com/addOrder', orderDetail)
             .then(function (response) {
-                if(response.data) {
-                    alert('Book added successfully.')
+                if (response.data) {
+                    alert('Order placed successfully.')
                 }
             })
             .catch(function (error) {
@@ -35,11 +35,9 @@ const Checkout = () => {
     }
 
     return (
-
         <div>
             <h1>Checkout</h1>
             {
-
                 Object.keys(bookInfo).length === 0 &&
                 <div className="progressBar">
                     <LinearProgress color="secondary" />
@@ -64,7 +62,6 @@ const Checkout = () => {
                             <div></div>
                             <h3>{bookInfo.price}</h3>
                         </div>
-
                     </div>
                     <button className="button-all" onClick={handleCheckOut} >Checkout</button>
                 </div>

@@ -4,24 +4,22 @@ import { UserContext } from '../../App';
 import './Order.css'
 
 const Orders = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([]);
     const [haveOrders, setHaveOrders] = useState(true);
     useEffect(() => {
         axios.get('https://fast-escarpment-67839.herokuapp.com/getOrder?email=' + loggedInUser.email)
             .then(function (response) {
                 setOrders(response.data);
-                if(!response.data.length) {
+                if (!response.data.length) {
                     setHaveOrders(false);
                 }
             })
             .catch(function (error) {
                 console.log(error);
             })
-            .then(function () {
-            });
-    }, [])
-    
+    }, [loggedInUser.email])
+
     return (
         <div>
             <h1>Order History</h1>

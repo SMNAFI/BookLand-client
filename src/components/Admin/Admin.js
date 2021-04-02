@@ -19,8 +19,8 @@ const Admin = () => {
         }
         axios.post('https://fast-escarpment-67839.herokuapp.com/addBook', newBook)
             .then(function (response) {
-                if(response) {
-                    alert('Book uploaded successfully')
+                if (response) {
+                    alert('Book added successfully.')
                 }
             })
             .catch(function (error) {
@@ -29,14 +29,14 @@ const Admin = () => {
     }
 
     const handleImageUpload = event => {
-        alert('Please wait few seconds for uploading image then submit.')
+        alert('Please wait few seconds. There will be another pop-up after image is uploaded.')
         const bookData = new FormData();
         bookData.set('key', '571346f6e8a7d61c4cf8cce645fbf09c');
         bookData.append('image', event.target.files[0])
 
         axios.post('https://api.imgbb.com/1/upload', bookData)
             .then(function (response) {
-                console.log(response.data.data.display_url);
+                alert('Image uploaded successfully. You can submit your data now.')
                 setImageURL(response.data.data.display_url);
             })
             .catch(function (error) {
@@ -45,49 +45,45 @@ const Admin = () => {
     }
 
     return (
-        <div>
-            <div className="admin-container">
-                <div className="sidebar">
-                    <p onClick={() => setIsAddActive(false)}><FontAwesomeIcon icon={faTasks} /> Manage Book</p>
-                    <p onClick={() => setIsAddActive(true)}><FontAwesomeIcon icon={faPlus} /> Add Book</p>
-                    <p><FontAwesomeIcon icon={faEdit} /> Edit Book</p>
-                </div>
-                {
-                    isAddActive &&
-                    <div className="container">
-                        <h2>Add Book</h2>
-                        <form onSubmit={handleSubmit(onSubmit)} className="form-container">
-
-                            <div>
-                                <p>Book Name</p>
-                                <input name="name" placeholder="Enter Name" ref={register({ required: true })} className="input-field" />
-                                {errors.exampleRequired && <span>This field is required</span>}
-                            </div>
-                            <div>
-                                <p>Author Name</p>
-                                <input name="author" placeholder="Enter Name" ref={register({ required: true })} className="input-field" />
-                                {errors.exampleRequired && <span>This field is required</span>}
-                            </div>
-                            <div>
-                                <p>Add Price</p>
-                                <input name="price" placeholder="Enter Price" ref={register({ required: true })} className="input-field" />
-                                {errors.exampleRequired && <span>This field is required</span>}
-                            </div>
-                            <div>
-                                <p>Add Book Cover Photo</p>
-                                <input type="file" onChange={handleImageUpload} />
-                            </div>
-                            <div style={{ marginTop: '20px' }}>
-                                <input type="submit" className="button-all" />
-                            </div>
-                        </form>
-                    </div>
-                }
-                {
-                    !isAddActive &&
-                    <Manage />
-                }
+        <div className="admin-container">
+            <div className="sidebar">
+                <p onClick={() => setIsAddActive(false)}><FontAwesomeIcon icon={faTasks} /> Manage Book</p>
+                <p onClick={() => setIsAddActive(true)}><FontAwesomeIcon icon={faPlus} /> Add Book</p>
+                <p><FontAwesomeIcon icon={faEdit} /> Edit Book</p>
             </div>
+            {
+                isAddActive &&
+                <div className="container">
+                    <h2>Add Book</h2>
+                    <form onSubmit={handleSubmit(onSubmit)} className="form-container">
+                        <div>
+                            <p>Book Name</p>
+                            <input name="name" placeholder="Enter Name" ref={register({ required: true })} className="input-field" />
+                            {errors.exampleRequired && <span>This field is required</span>}
+                        </div>
+                        <div>
+                            <p>Author Name</p>
+                            <input name="author" placeholder="Enter Name" ref={register({ required: true })} className="input-field" />
+                            {errors.exampleRequired && <span>This field is required</span>}
+                        </div>
+                        <div>
+                            <p>Add Price</p>
+                            <input name="price" placeholder="Enter Price" ref={register({ required: true })} className="input-field" />
+                            {errors.exampleRequired && <span>This field is required</span>}
+                        </div>
+                        <div>
+                            <p>Add Book Cover Photo</p>
+                            <input type="file" onChange={handleImageUpload} />
+                        </div>
+                        <div style={{ marginTop: '20px' }}>
+                            <input type="submit" className="button-all" />
+                        </div>
+                    </form>
+                </div>
+            }
+            {
+                !isAddActive && <Manage />
+            }
         </div>
     );
 };

@@ -14,14 +14,12 @@ const Home = () => {
             .catch(function (error) {
                 console.log(error);
             })
-            .then(function () {
-            });
     }, [])
 
     return (
         <div>
             <div className="search">
-                <input type="text" placeholder="Search Book" className="search-field"/>
+                <input type="text" placeholder="Search Book" className="search-field" />
                 <button className="search-btn">Search</button>
             </div>
             {

@@ -29,3 +29,17 @@
     color: white;
     border-radius: 0px 3px 3px 0px;
 }
+
+@media (max-width: 688px) {
+    .home-container{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+@media (min-width: 688px) and (max-width: 768px) {
+    .home-container{
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+}

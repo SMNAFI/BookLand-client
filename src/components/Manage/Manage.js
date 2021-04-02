@@ -15,9 +15,6 @@ const Manage = () => {
             .catch(function (error) {
                 console.log(error);
             })
-            .then(function () {
-
-            });
     }, [])
 
     const handleDelete = (event, id) => {
@@ -27,8 +24,8 @@ const Manage = () => {
         })
             .then(res => res.json())
             .then(result => {
-                if (result) {    
-                    e.style.display = 'none';               
+                if (result) {
+                    e.style.display = 'none';
                     alert('Item deleted successfully.')
                 }
             })

@@ -2,16 +2,22 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 30px;
+    margin-bottom: 60px;
 }
 
 .sidebar{
     background-color: #222629;
-    min-height: 500px;
+    height: 100%;
     border-radius: 6px;
 }
 
-.sidebar p{
-    padding: 15px 50px;
+.sidebar p{   
+    padding: 10px 30px
+}
+
+.sidebar p:hover{
+    background-color: #282c34;
+    cursor: pointer;
 }
 
 .form-container{   
@@ -29,6 +35,15 @@
 
 .container{
     background-color: #222629;
-    padding: 30px 50px;
+    padding: 2% 5%;
     border-radius: 6px;
+}
+
+@media (max-width: 778px) {
+    .admin-container {
+        display: block;
+    }
+    .form-container {
+        display: block;
+    }
 }
