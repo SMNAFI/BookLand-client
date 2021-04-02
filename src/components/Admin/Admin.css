@@ -47,3 +47,9 @@
         display: block;
     }
 }
+
+@media (min-width: 778px) and (max-width: 950px){
+    .form-container {
+        display: block;
+    }
+}

@@ -36,7 +36,7 @@ const Orders = () => {
                         <h3>Description</h3>
                         <h3>Quantity</h3>
                         <h3>Price</h3>
-                        <h3>Order Time</h3>
+                        <h3>Order Date</h3>
                         <h3>Status</h3>
                     </div>
                     {

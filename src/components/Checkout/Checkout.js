@@ -31,6 +31,7 @@ const Checkout = () => {
             })
             .catch(function (error) {
                 console.log(error);
+                alert('Something went wrong. Please try again.');
             });
     }
 

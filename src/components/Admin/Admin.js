@@ -25,6 +25,7 @@ const Admin = () => {
             })
             .catch(function (error) {
                 console.log(error);
+                alert('Something went wrong. Please try again.');
             });
     }
 
@@ -41,6 +42,7 @@ const Admin = () => {
             })
             .catch(function (error) {
                 console.log(error);
+                alert('Something went wrong. Please try again.');
             });
     }
 
@@ -75,7 +77,7 @@ const Admin = () => {
                             <p>Add Book Cover Photo</p>
                             <input type="file" onChange={handleImageUpload} />
                         </div>
-                        <div style={{ marginTop: '20px' }}>
+                        <div style={{ margin: '20px 0px' }}>
                             <input type="submit" className="button-all" />
                         </div>
                     </form>
