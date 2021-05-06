@@ -1,8 +1,18 @@
 # BookLand
 
-This is a simple react e-commerce website to buy books online (demo).\
-User can log in using google sign in method. User can place order and also see order history. For database, mongodb is used. There is also an admin section for managing products. [Server-side code](https://github.com/Porgramming-Hero-web-course/full-stack-server-SMNAFI).
+BookLand is a full-stack web application using MERN stack. This is the frontend part of the fullstack project using create-react-app
+> [BookLand - Backend](https://github.com/SMNAFI/BookLand-server)
 
-## Live on Firebase
+## Key Features
 
-You can see live site [here](https://bookshop-assignment-10.web.app/)
+- Users can order books as well as see their previous orders.
+- Protected route is used in ordering, users have to log in with google before ordering.
+- Admin dashboard for managing, adding, or removing products.
+
+## Technologies 
+
+ReactJS, NodeJS, ExpressJS, Firebase, MongoDB, Heroku.
+
+## Deployment
+
+> Firebase hosting. You can see live site [here](https://bookshop-assignment-10.web.app/).
